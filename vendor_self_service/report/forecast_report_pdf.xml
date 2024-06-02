@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="action_report_vendor_forecast" model="ir.actions.report">
+        <field name="name">Forecast Report</field>
+        <field name="model">vendor.forecast</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">vendor_self_service.report_forecast</field>
+        <field name="report_file">vendor_self_service.report_forecast</field>
+        <field name="binding_model_id" ref="vendor_self_service.model_vendor_forecast"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

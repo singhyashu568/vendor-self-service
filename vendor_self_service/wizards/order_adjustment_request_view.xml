@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+    
+        <record id="vendor_adjustment_request_view_form" model="ir.ui.view">
+            <field name="name">vendor.adjustment.request.view.form</field>
+            <field name="model">vendor.adjustment.request</field>
+            <field name="arch" type="xml">
+                <form string="Order Adjustment Request">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="order_id"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="adjustment_detail"/>
+                            <field name="comment"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="request_submission" type="object" string="Submission" class="oe_highlight"/> 
+                        <button string="Cancel" class="btn-secondary" special="cancel"/> 
+                    </footer>
+                </form>
+                
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="vendor_adjustment_request_action">
+            <field name="name">Vendor Adjustment Request</field>
+            <field name="res_model">vendor.adjustment.request</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="vendor_adjustment_request_view_form"/>
+            <field name="target">new</field>
+
+        </record>
+    
+    </data>
+    
+</odoo>

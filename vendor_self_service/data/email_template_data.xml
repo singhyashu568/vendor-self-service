@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+    <!-- Email Template Configuration -->
+        <record id="email_template_order_adjustment_request" model="mail.template">
+            <field name="name">Order Adjustment Request Submission</field>
+            <field name="model_id" ref="vendor_self_service.model_vendor_adjustment_request"/>
+            <field name="subject">Order Adjustment | Order Ref-{{object.order_id.name}}</field>
+            <field name="email_from">{{(user.email_formatted)}}</field>
+            <field name="email_to">singhyashu568@gmail.com</field>
+            <field name="body_html" type="html">
+                <t t-out="object.adjustment_detail"></t>
+            </field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+<!-- Server Action To Generate Multiple Records -->
+        <record id="action_forecast_report" model="ir.actions.server">
+            <field name="name">Forecast Report</field>
+            <field name="model_id" ref="vendor_self_service.model_vendor_forecast"/>
+            <field name="binding_model_id" ref="vendor_self_service.model_vendor_forecast"/>
+            <field name="binding_view_types">tree</field>
+            <field name="state">code</field>
+            <field name="code">if records: action = records.forecast_report()</field>
+        </record>
+    </data>
+</odoo>

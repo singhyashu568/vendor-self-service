@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+    
+        <template id="report_forecast">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <div class="oe_structure"/>
+                            <h2>Forecast Report</h2>
+                            <table class="table table-bordered"  style="width: 100%; border-collapse: collapse; border: 2px solid #000;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center; border: 1px solid #000;" scope="col">S.No.</th>
+                                        <th style="text-align: center; border: 1px solid #000;" scope="col">Product</th>
+                                        <th style="text-align: center; border: 1px solid #000;" scope="col">Expected Quantity</th>
+                                        <th style="text-align: center; border: 1px solid #000;" scope="col">Forecast Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o" t-as="line">
+                                        <tr>
+                                            <td style="text-align: center; border: 1px solid #000;"><span t-esc="line.id"/></td>
+                                            <td style="text-align: center; border: 1px solid #000;"><span t-esc="line.product_id.name"/></td>
+                                            <td style="text-align: center; border: 1px solid #000;"><span t-esc="line.forecast_date"/></td>
+                                            <td style="text-align: center; border: 1px solid #000;"><span t-esc="line.expected_quantity"/></td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

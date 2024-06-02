@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <menuitem
+        id="root_menu"
+        name="Vendor Self Service"
+        sequence="10"/>
+    <menuitem
+        id="vendor_forecast"
+        name="Vendor Forecast"
+        parent="root_menu"
+        action="vendor_forecast_action"
+        sequence="10"/>
+    <menuitem
+        id="vendor_adjustment_request"
+        name="Vendor Adjustment Request"
+        parent="root_menu"
+        action="vendor_adjustment_request_action"
+        sequence="20"/>
+</odoo>

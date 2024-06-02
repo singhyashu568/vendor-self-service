@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <template id ="portal_vendor_forecast" name="Vendor Forecast">
+       <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+            <t t-if="forecast_id" t-call="portal.portal_table">
+                    <thead>
+                        <tr class="active">
+                            <th>Product Name</th>
+                            <th class="text-end">Expexted Qty</th>
+                            <th class="text-end">Forecast Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <t t-foreach="forecast_id" t-as="value">
+                           <tr>
+                                <td class="">
+                                    <span t-field="value.product_id"/>
+                                </td>
+                                <td class="text-end">
+                                    <span t-field="value.expected_quantity"/>
+                                </td>
+                                <td class="text-end">
+                                    <span t-field="value.forecast_date"/>
+                                </td>
+                           </tr>
+                        </t>
+                    </tbody>
+           </t>
+        </t>
+
+</template>
+</odoo>
